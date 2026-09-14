@@ -142,19 +142,20 @@ const Team = () => {
                     name="Anthony Terry-Rojas"
                 />
                 <Portrait
-                    to="https://www.linkedin.com/in/john-kiritsis/"
-                    email="jkirit1@lsu.edu"
+                    to="https://www.linkedin.com/in/ian-robertson-00199b326/"
+                    email="Ian.Robertson@lsu.edu"
                     image={AdminImages.Powertrain}
                     title="Powertrain Lead"
-                    name="Yianni Kiritsis"
+                    name="Ian Robertson"
                 />
                 <Portrait
                     to="https://www.linkedin.com/in/luka-brekalo1/"
                     email="lbreka1@lsu.edu"
                     image={AdminImages.Safety}
-                    title="Safety Chair"
+                    title="Education & Safety Chair"
                     name="Jered Perry"
                 />
+                {/* 
                 <Portrait
                     to="https://www.linkedin.com/in/gareth-oram-02470a22b/"
                     email="goram1@lsu.edu"
@@ -162,7 +163,7 @@ const Team = () => {
                     title="Education Chair"
                     name="Gareth Oram"
                 />
-                {/* <Portrait
+                <Portrait
                     to="none"
                     email="mteruy1@lsu.edu"
                     image={AdminImages.President}
