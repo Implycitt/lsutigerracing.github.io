@@ -4,9 +4,9 @@ import { revealPage } from '../helpers/intro';
 import Intro from '../assets/images/Home/Intro.svg';
 
 const STORAGE_KEY = 'tr-intro-played';
-const SLIDE_AT = 2.8;
+const SLIDE_AT = 1.4;
 const SLIDE_SECONDS = 1;
-const NAVBAR_PAUSE = 0.2;
+const NAVBAR_PAUSE = 0.1;
 const NAVBAR_SECONDS = 0.7;
 
 const hasPlayed = () => {

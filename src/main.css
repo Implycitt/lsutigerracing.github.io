@@ -947,7 +947,7 @@ html {
 }
 
 .intro-overlay-lockup {
-    width: min(860px, 84vw);
+    width: min(550px, 34vw);
     aspect-ratio: 474 / 200;
 }
 
