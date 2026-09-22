@@ -4,6 +4,8 @@ import { ScrollTrigger } from 'gsap/all';
 import { horizontalLoop } from '../helpers/horizontalLoop';
 
 import { Link } from 'react-router-dom';
+import { IntroOverlay } from '../components/IntroOverlay';
+import { holdForReveal } from '../helpers/intro';
 
 import Landing from "../assets/images/Home/Landing.jpg";
 import Hero from "../assets/images/Home/Hero.jpg";
@@ -33,12 +35,16 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-	useGSAP(() => {
-		gsap.from(".home-landing-tagline", {
-			y: 60,
-			opacity: 0,
-			duration: 1
+	const { contextSafe } = useGSAP(() => {
+		const revealTagline = contextSafe(() => {
+			gsap.from(".home-landing-tagline", {
+				y: 60,
+				opacity: 0,
+				duration: 1
+			})
 		})
+		const holdTagline = holdForReveal(revealTagline)
+
 		gsap.from(".home-redirect", {
 			clipPath: "inset(0 0 100% 0)",
 			duration: 1.2,
@@ -72,10 +78,13 @@ const Home = () => {
 				// markers: true
 			}
 		})
+
+		return holdTagline
 	})
 
 	return (
 		<div className="background">
+			<IntroOverlay />
 			<div className="flex-center relative w-screen h-screen overflow-hidden">
 				{/* Background Image */}
 				{/* WARNING: discord embed of this website relies on this image; if you change this image out in the future, make sure to update index.html too. */}
