@@ -3,17 +3,18 @@ import gsap from 'gsap';
 import { revealPage } from '../helpers/intro';
 import Intro from '../assets/images/Home/Intro.svg';
 
-const STORAGE_KEY = 'tr-intro-played';
 const SLIDE_AT = 1.4;
 const SLIDE_SECONDS = 1;
 const NAVBAR_PAUSE = 0.1;
 const NAVBAR_SECONDS = 0.7;
+const STORAGE_KEY = 'tr-intro-played';
 
-const hasPlayed = () => {
+const shouldPlay = () => {
     try {
-        return sessionStorage.getItem(STORAGE_KEY) === '1';
+        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
+        return navigation?.type === 'reload' || sessionStorage.getItem(STORAGE_KEY) !== '1';
     } catch {
-        return false;
+        return true;
     }
 };
 
@@ -25,7 +26,7 @@ const markPlayed = () => {
 };
 
 export const IntroOverlay = () => {
-    const [playing, setPlaying] = useState(() => !hasPlayed());
+    const [playing, setPlaying] = useState(shouldPlay);
     const overlayRef = useRef<HTMLDivElement>(null);
     const lockupRef = useRef<HTMLImageElement>(null);
 

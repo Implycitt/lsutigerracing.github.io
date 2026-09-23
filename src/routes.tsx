@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react"
 import { Routes, Route, Navigate, useLocation } from "react-router-dom"
 import { Navbar } from "./components/Navbar.tsx"
+import { IntroOverlay } from "./components/IntroOverlay"
 import Footer from "./components/Footer"
 // Public pages
 import Home from './pages/Home'
@@ -21,6 +22,7 @@ export const AppRoutes = () => {
     return (
         <>
             <Navbar />
+            <IntroOverlay />
                 <Routes>
                     {/* public pages */}
                     <Route path="/" element={<Home />} />

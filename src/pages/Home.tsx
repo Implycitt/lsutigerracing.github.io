@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/all';
 import { horizontalLoop } from '../helpers/horizontalLoop';
 
 import { Link } from 'react-router-dom';
-import { IntroOverlay } from '../components/IntroOverlay';
 import { holdForReveal } from '../helpers/intro';
 
 import Landing from "../assets/images/Home/Landing.jpg";
@@ -84,7 +83,6 @@ const Home = () => {
 
 	return (
 		<div className="background">
-			<IntroOverlay />
 			<div className="flex-center relative w-screen h-screen overflow-hidden">
 				{/* Background Image */}
 				{/* WARNING: discord embed of this website relies on this image; if you change this image out in the future, make sure to update index.html too. */}
